@@ -189,7 +189,7 @@ static const CGFloat MarginLeft = 20.0f;
     
     self.scrollView.frame = cropRect;
     self.scrollView.contentSize = cropRect.size;
-    
+    [self.scrollView setContentOffset:CGPointMake(0, 0)];
     self.zoomingView = [[UIView alloc] initWithFrame:self.scrollView.bounds];
     self.zoomingView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.zoomingView];
