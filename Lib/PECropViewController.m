@@ -83,9 +83,14 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.toolbar.translucent = NO;
 
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                                                                          target:self
-                                                                                          action:@selector(cancel:)];
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 15.0f, 20.0f)];
+    [cancelButton setBackgroundImage:[UIImage imageNamed:@"IMG_back.png"] forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    self.navigationItem.leftBarButtonItem = cancelButtonItem;
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+    //                                                                                      target:self
+    //                                                                                      action:@selector(cancel:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self
                                                                                            action:@selector(done:)];
