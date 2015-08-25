@@ -28,6 +28,7 @@
 		14BB4F11174BD7CC00C75F78 /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4F0E174BD7CA00C75F78 /* PECropRectView.m */; };
 		14BB4F12174BD7CC00C75F78 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BB4F10174BD7CB00C75F78 /* PEResizeControl.m */; };
 		E576407617A7889200111967 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = E576407417A7889200111967 /* UIImage+PECrop.m */; };
+		FEC780591B8C1D8200EA064F /* IMG_back.png in Resources */ = {isa = PBXBuildFile; fileRef = FEC780581B8C1D8200EA064F /* IMG_back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		14BB4F10174BD7CB00C75F78 /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PEResizeControl.m; path = Lib/PEResizeControl.m; sourceTree = SOURCE_ROOT; };
 		E576407417A7889200111967 /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PECrop.m"; path = "Lib/UIImage+PECrop.m"; sourceTree = SOURCE_ROOT; };
 		E576407517A7889200111967 /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PECrop.h"; path = "Lib/UIImage+PECrop.h"; sourceTree = SOURCE_ROOT; };
+		FEC780581B8C1D8200EA064F /* IMG_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_back.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				14BB4EC7174BC57700C75F78 /* Default.png */,
 				14BB4EC8174BC57700C75F78 /* Default@2x.png */,
 				14BB4EC6174BC57700C75F78 /* Default-568h@2x.png */,
+				FEC780581B8C1D8200EA064F /* IMG_back.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				14BB4ECA174BC57700C75F78 /* Default.png in Resources */,
 				14BB4ECB174BC57700C75F78 /* Default@2x.png in Resources */,
 				14BB4EE7174BD70200C75F78 /* InfoPlist.strings in Resources */,
+				FEC780591B8C1D8200EA064F /* IMG_back.png in Resources */,
 				14BB4EEC174BD70E00C75F78 /* MainStoryboard_iPad.storyboard in Resources */,
 				14BB4EED174BD70E00C75F78 /* MainStoryboard_iPhone.storyboard in Resources */,
 				14707AE7175B99D900A58D40 /* PEPhotoCropEditor.bundle in Resources */,
