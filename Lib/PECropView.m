@@ -67,6 +67,7 @@ static const CGFloat MarginLeft = 20.0f;
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
     self.scrollView.backgroundColor = [UIColor clearColor];
     self.scrollView.maximumZoomScale = 20.0f;
+    self.scrollView.minimumZoomScale = 1.0f;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.bounces = NO;
