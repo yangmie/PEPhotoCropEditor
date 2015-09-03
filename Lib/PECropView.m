@@ -115,6 +115,7 @@ static const CGFloat MarginLeft = 20.0f;
     }
     CGPoint locationInImageView = [self convertPoint:point toView:self.zoomingView];
     CGPoint zoomedPoint = CGPointMake(locationInImageView.x * self.scrollView.zoomScale, locationInImageView.y * self.scrollView.zoomScale);
+
     if (CGRectContainsPoint(self.zoomingView.frame, zoomedPoint)) {
         return self.scrollView;
     }
@@ -190,6 +191,9 @@ static const CGFloat MarginLeft = 20.0f;
     
     self.scrollView.frame = cropRect;
     self.scrollView.contentSize = cropRect.size;
+
+    // prevent zoom out to less than original image
+    self.scrollView.minimumZoomScale = cropRect.size.height < cropRect.size.width ? cropRect.size.width / cropRect.size.height : 1;
     [self.scrollView setContentOffset:CGPointMake(0, 0)];
     self.zoomingView = [[UIView alloc] initWithFrame:self.scrollView.bounds];
     self.zoomingView.backgroundColor = [UIColor clearColor];
@@ -448,17 +452,12 @@ static const CGFloat MarginLeft = 20.0f;
     if (CGRectEqualToRect(self.scrollView.frame, toRect)) {
         return;
     }
-
-    // add to prevent zoom out to less than original image
-    if (CGRectGetHeight(toRect) < CGRectGetHeight(self.imageView.frame) || CGRectGetWidth(toRect) < CGRectGetWidth(self.imageView.frame)) {
-        return;
-    }
     
     CGFloat width = CGRectGetWidth(toRect);
     CGFloat height = CGRectGetHeight(toRect);
     
     CGFloat scale = MIN(CGRectGetWidth(self.editingRect) / width, CGRectGetHeight(self.editingRect) / height);
-    
+
     CGFloat scaledWidth = width * scale;
     CGFloat scaledHeight = height * scale;
     CGRect cropRect = CGRectMake((CGRectGetWidth(self.bounds) - scaledWidth) / 2,
