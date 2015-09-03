@@ -448,6 +448,11 @@ static const CGFloat MarginLeft = 20.0f;
     if (CGRectEqualToRect(self.scrollView.frame, toRect)) {
         return;
     }
+
+    // add to prevent zoom out to less than original image
+    if (CGRectGetHeight(toRect) < CGRectGetHeight(self.imageView.frame) || CGRectGetWidth(toRect) < CGRectGetWidth(self.imageView.frame)) {
+        return;
+    }
     
     CGFloat width = CGRectGetWidth(toRect);
     CGFloat height = CGRectGetHeight(toRect);
